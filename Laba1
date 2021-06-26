@@ -1,0 +1,28 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "Rus");
+    srand(time(0));
+    const int K = 10;
+    int J[K];
+    cout << "Случайный массив:" << endl;
+    for (int i = 0; i < K; i++)
+     {
+  J[i] = 1 + rand() % 100; //рандомное заполнение числами до 100;
+  cout << J[i] << " ";
+
+ }
+ cout << endl;
+    for (int i = 0; i < K; i++)
+    {
+        if (J[i] % 2 != 0)  
+            J[i] = 0; // Проверяется нечетность и изменяется на 0;
+    }
+    cout << "Полученный массив:" << endl;
+    for (int i = 0; i < K; i++)
+        cout << J[i] << " ";                       // вывод массива;
+    system("pause");
+    return 0;
+}
