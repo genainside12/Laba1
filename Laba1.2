@@ -1,0 +1,34 @@
+#include <Windows.h>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+void func2() {
+ char symbol;
+ string s;
+ cout << "введите символ(НА АНГЛ. РАСКЛАДКЕ)" << endl;
+ cin >> symbol;
+ if (isalpha(symbol)) // проверка на ввод буквы
+  cout << "введена буква" << endl;
+ else (cout << "введена не буква" << endl);
+ do {
+  cout << "Введите строку" << endl; //ввод строки с проверкой
+ } while (!getline(cin, s));
+ cout << "строка введена" << endl;
+ 
+ for (int i = 0; i < s[i] != '\0'; i++) {
+  if (s[i] == symbol) {
+   cout << "Символ " << symbol << " стоит на " << i + 1 << " месте"; break; // вывод номера введенного символа
+  }
+ }
+ cout << endl;
+ //cout << "Символ " << symbol << " стоит на " << s.find(symbol) + 1 << " месте";  //тоже рабочий вариант проверки номера введенного символа
+}
+int main()
+{
+ setlocale(LC_ALL, "Russian");
+ cout << "Задание 2:" << endl;
+ func2();
+}
